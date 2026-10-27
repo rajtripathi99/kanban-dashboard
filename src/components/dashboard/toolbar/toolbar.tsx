@@ -19,6 +19,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Switch } from "@/components/ui/switch";
 import { PRIORITIES, PRIORITY_META, COLUMN_COLOR_META, type Priority } from "@/lib/kanban";
 import { useKanbanStore } from "@/stores/kanban-store";
 import {
@@ -52,37 +53,6 @@ function FilterChip({
       )}
     >
       {children}
-    </button>
-  );
-}
-
-function Toggle({
-  checked,
-  onChange,
-  label,
-}: {
-  checked: boolean;
-  onChange: (value: boolean) => void;
-  label: string;
-}) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={checked}
-      aria-label={label}
-      onClick={() => onChange(!checked)}
-      className={cn(
-        "relative h-4 w-7 shrink-0 rounded-full transition-colors",
-        checked ? "bg-[#0F172A]" : "bg-[#E2E8F0]",
-      )}
-    >
-      <span
-        className={cn(
-          "absolute top-0.5 size-3 rounded-full bg-white shadow-sm transition-transform",
-          checked ? "translate-x-3.5" : "translate-x-0.5",
-        )}
-      />
     </button>
   );
 }
@@ -306,7 +276,7 @@ export function Toolbar() {
               <button
                 type="button"
                 onClick={() => setFilterOpen(false)}
-                className="flex h-7 items-center rounded-[7px] bg-[#0F172A] px-3 text-[11px] font-medium text-white hover:bg-[#1E293B]"
+                className="flex h-7 items-center rounded-[7px] bg-[#FF5722] px-3 text-[11px] font-medium text-white shadow-[0_1px_2px_rgba(255,87,34,0.20)] transition-colors hover:bg-[#E64A19] active:bg-[#D84315]"
               >
                 Apply filters
               </button>
@@ -340,10 +310,11 @@ export function Toolbar() {
                     className="flex items-center justify-between text-[12px] text-[#475569]"
                   >
                     {option.label}
-                    <Toggle
-                      label={option.label}
+                    <Switch
+                      size="sm"
+                      aria-label={option.label}
                       checked={display[option.key]}
-                      onChange={(value) =>
+                      onCheckedChange={(value) =>
                         setDisplay({ [option.key]: value })
                       }
                     />

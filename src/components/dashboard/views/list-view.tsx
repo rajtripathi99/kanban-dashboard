@@ -189,7 +189,7 @@ export function ListView({ mode = "all" }: { mode?: "all" | "backlog" }) {
             <button
               type="button"
               onClick={() => openDialog({ type: "new-task", columnId: openColumns[0]?.id })}
-              className="flex h-8 items-center gap-1.5 rounded-[8px] bg-[#0F172A] px-3 text-[12px] font-medium text-white transition-colors hover:bg-[#1E293B]"
+              className="flex h-8 items-center gap-1.5 rounded-[8px] bg-[#FF5722] px-3 text-[12px] font-medium text-white shadow-[0_1px_2px_rgba(255,87,34,0.20)] transition-colors hover:bg-[#E64A19] active:bg-[#D84315]"
             >
               <Icon icon={PlusIcon} size={11} strokeWidth={2.2} />
               New issue

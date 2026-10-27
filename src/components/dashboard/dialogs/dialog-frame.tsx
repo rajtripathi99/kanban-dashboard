@@ -103,7 +103,7 @@ export function PrimaryButton({
     <button
       type="button"
       className={cn(
-        "flex h-8 items-center rounded-[8px] bg-[#0F172A] px-3.5 text-[12px] font-medium text-white shadow-[0_1px_2px_#00000014] transition-colors hover:bg-[#1E293B] disabled:cursor-not-allowed disabled:opacity-40",
+        "flex h-8 items-center rounded-[8px] bg-[#FF5722] px-3.5 text-[12px] font-medium text-white shadow-[0_1px_2px_rgba(255,87,34,0.20)] transition-colors hover:bg-[#E64A19] active:bg-[#D84315] disabled:cursor-not-allowed disabled:opacity-40",
         className,
       )}
       {...props}

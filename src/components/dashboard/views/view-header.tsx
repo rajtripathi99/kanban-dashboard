@@ -59,7 +59,7 @@ export function EmptyState({
         <button
           type="button"
           onClick={onClear}
-          className="mt-1 flex h-8 items-center rounded-[8px] bg-[#0F172A] px-3 text-[12px] font-medium text-white transition-colors hover:bg-[#1E293B]"
+          className="mt-1 flex h-8 items-center rounded-[8px] border border-[#FF572266] bg-[#FFF7ED] px-3 text-[12px] font-medium text-[#C2410C] transition-colors hover:border-[#FF5722] hover:bg-[#FFEDD5]"
         >
           Clear search and filters
         </button>

@@ -5,6 +5,7 @@ import { GearsIcon } from "@hugeicons/core-free-icons";
 import { cn } from "cn";
 
 import { Icon } from "@/components/dashboard/icon";
+import { Switch } from "@/components/ui/switch";
 import { useKanbanStore } from "@/stores/kanban-store";
 import { DISPLAY_OPTIONS, useUiStore } from "@/stores/ui-store";
 import {
@@ -99,36 +100,21 @@ export function SettingsDialog({
           </div>
           <div className="flex flex-col gap-1 rounded-[10px] border border-[#0000000F] overflow-hidden">
             {(Object.keys(display) as (keyof typeof display)[]).map((key) => (
-              <label
+              <div
                 key={key}
-                className="flex h-9 cursor-pointer items-center justify-between border-b border-[#0000000F] px-3 text-[12px] text-[#475569] last:border-b-0"
+                className="flex h-9 items-center justify-between border-b border-[#0000000F] px-3 text-[12px] text-[#475569] last:border-b-0"
               >
-                <span>
+                <span id={`display-field-${key}`}>
                   {DISPLAY_OPTIONS.find((option) => option.key === key)?.label ??
                     key}
                 </span>
-                <span
-                  className={cn(
-                    "relative h-4 w-7 rounded-full transition-colors",
-                    display[key] ? "bg-[#0F172A]" : "bg-[#E2E8F0]",
-                  )}
-                >
-                  <input
-                    type="checkbox"
-                    checked={display[key]}
-                    onChange={(event) =>
-                      setDisplay({ [key]: event.target.checked })
-                    }
-                    className="sr-only"
-                  />
-                  <span
-                    className={cn(
-                      "absolute top-0.5 size-3 rounded-full bg-white shadow-sm transition-transform",
-                      display[key] ? "translate-x-3.5" : "translate-x-0.5",
-                    )}
-                  />
-                </span>
-              </label>
+                <Switch
+                  size="sm"
+                  checked={display[key]}
+                  onCheckedChange={(value) => setDisplay({ [key]: value })}
+                  aria-labelledby={`display-field-${key}`}
+                />
+              </div>
             ))}
           </div>
         </div>

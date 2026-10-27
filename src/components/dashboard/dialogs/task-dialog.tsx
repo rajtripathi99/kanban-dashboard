@@ -613,7 +613,7 @@ export function TaskDialog({
               type="button"
               onClick={save}
               disabled={!canSave}
-              className="flex h-8 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-[#0F172A] px-4 text-[12px] font-medium text-white shadow-[0_1px_2px_#00000014] transition-colors hover:bg-[#1E293B] disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-8 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-[#FF5722] px-4 text-[12px] font-medium text-white shadow-[0_1px_2px_rgba(255,87,34,0.20)] transition-colors hover:bg-[#E64A19] active:bg-[#D84315] disabled:cursor-not-allowed disabled:opacity-40"
             >
               {task ? "Save changes" : "Create issue"}
             </button>

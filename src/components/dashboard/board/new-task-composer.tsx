@@ -115,7 +115,7 @@ export function NewTaskComposer({
             type="button"
             onClick={commit}
             disabled={!title.trim()}
-            className="flex h-7 items-center gap-1 rounded-[7px] bg-[#0F172A] px-2.5 text-[11px] font-medium text-white transition-colors hover:bg-[#1E293B] disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-7 items-center gap-1 rounded-[7px] bg-[#FF5722] px-2.5 text-[11px] font-medium text-white shadow-[0_1px_2px_rgba(255,87,34,0.20)] transition-colors hover:bg-[#E64A19] active:bg-[#D84315] disabled:cursor-not-allowed disabled:opacity-40"
           >
             <Icon icon={PlusIcon} size={10} strokeWidth={2.4} />
             Add
